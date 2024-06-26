@@ -1,0 +1,160 @@
+@import url('./reset.css');
+
+.title {
+  font-size: 28px;
+  color: tomato;
+  margin: 10px 0;
+}
+/* Default Form styles */
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.search-input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  background-color: #ffffff;
+  width: 240px;
+  height: 24px;
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 16px;
+}
+.search-input:hover {
+  border: 1px solid #000000;
+}
+.search-input:focus {
+  border: 1px solid #4e75ff;
+  outline: none;
+  color: #2e2f42;
+}
+::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+}
+.search-btn {
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+.search-btn:hover {
+  background-color: #6c8cff;
+}
+/* Insert Loader from cssloaders.github.io */
+.loader {
+  width: 50px;
+  height: 50px;
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  border-width: 3px 2px 3px 2px;
+  border-style: solid dotted solid dotted;
+  border-color: #de3500 rgba(151, 107, 93, 0.3) #4e75ff rgba(151, 107, 93, 0.3);
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: 1s rotate linear infinite;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom-color: #4e75ff;
+  transform: translate(-10px, 19px) rotate(-35deg);
+}
+.loader:after {
+  border-color: #de3500 #0000 #0000 #0000;
+  transform: translate(32px, 3px) rotate(-35deg);
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rendering styles */
+.gallery {
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.gallery-item {
+  position: relative;
+  max-width: 300px;
+  max-height: 200px;
+  border: 1px solid #808080;
+  transition: 500ms;
+}
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 500ms;
+}
+.gallery-item:hover,
+.gallery-image:hover {
+  cursor: zoom-in;
+  border-color: blue;
+  box-shadow: 0px 8px 8px 2px rgba(16, 16, 97, 0.48);
+}
+.gallery-text {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 20px;
+}
+.gallery-text-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-text-dscr {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+.gallery-text-count {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+/* Tiny styles for iziToast */
+.iziToast-texts {
+  font-family: Montserrat, sans-serif;
+  width: 322px;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
