@@ -1,10 +1,16 @@
-/* Reset styles */
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Montserrat, sans-serif;
   margin: 0;
-  padding: 0 20px;
+  width: 100%;
+  height: 100vh;
+  font-family: Montserrat, sans-serif;
+  background-color: #262626;
 }
+
+/* Reset styles */
 
 h1,
 h2,

@@ -1,12 +1,13 @@
 @import url('./reset.css');
 
-.title {
-  font-size: 28px;
-  color: tomato;
-  margin: 10px 0;
-}
-/* Default Form styles */
+/* Default styles */
 
+.container {
+  max-width: 1396px;
+  padding: 16px 0;
+  margin: 0 auto;
+  position: relative;
+}
 .form {
   margin: 0 auto;
   display: flex;
@@ -15,14 +16,14 @@
   margin-bottom: 16px;
 }
 .search-input {
-  border: 1px solid #808080;
+  border: 1px solid #ffffff;
   border-radius: 4px;
-  background-color: #ffffff;
-  width: 240px;
-  height: 24px;
+  width: 272px;
+  height: 40px;
   padding: 8px 16px;
   font-family: inherit;
   font-size: 16px;
+  transition: 500ms;
 }
 .search-input:hover {
   border: 1px solid #000000;
@@ -40,11 +41,32 @@
   letter-spacing: 0.04em;
   color: #808080;
 }
-.search-btn {
+.options {
+  display: none;
+}
+.load-btn {
+  display: block;
+  margin: 0 auto;
+}
+.anchor-link {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  color: #4e75ff;
+  transition: 500ms ease-in-out;
+}
+.anchor-link:hover {
+  color: #6c8cff;
+  text-decoration: underline;
+}
+.is-visible {
+  display: flex;
+}
+.search-btn,
+.load-btn {
   border-radius: 8px;
   border: none;
   padding: 8px 16px;
-  width: 91px;
   height: 40px;
   background-color: #4e75ff;
   font-family: inherit;
@@ -53,10 +75,69 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
+  transition: 500ms;
 }
-.search-btn:hover {
+.search-btn:hover,
+.load-btn:hover {
   background-color: #6c8cff;
 }
+
+/* Rendering styles */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.gallery-item {
+  width: 340px;
+  height: 200px;
+  border: 2px solid #808080;
+  transition: 500ms;
+}
+.img-container {
+  width: 100%;
+  height: 79.6%;
+}
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 500ms;
+}
+.gallery-item:hover {
+  border-color: #4e75ff;
+  transform: scale(1.04);
+}
+.gallery-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 20px;
+}
+.gallery-text-property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-text-dscr {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+.gallery-text-count {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
 /* Insert Loader from cssloaders.github.io */
 .loader {
   width: 50px;
@@ -89,66 +170,6 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-/* Rendering styles */
-.gallery {
-  margin: 0 auto;
-  padding: 24px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-.gallery-item {
-  position: relative;
-  max-width: 300px;
-  max-height: 200px;
-  border: 1px solid #808080;
-  transition: 500ms;
-}
-.gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 500ms;
-}
-.gallery-item:hover,
-.gallery-image:hover {
-  cursor: zoom-in;
-  border-color: blue;
-  box-shadow: 0px 8px 8px 2px rgba(16, 16, 97, 0.48);
-}
-.gallery-text {
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 0 20px;
-}
-.gallery-text-property {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.gallery-text-dscr {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.33333;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
-}
-.gallery-text-count {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 2;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
 }
 
 /* Tiny styles for iziToast */
